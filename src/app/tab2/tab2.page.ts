@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Producto } from '../models/producto';
+import { DataLocalService } from '../service/data-local.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(public dataLocal: DataLocalService) {}
 
+  abrirProducto( producto :Producto) {
+    this.dataLocal.abrirProducto( producto );
+  }
 }
